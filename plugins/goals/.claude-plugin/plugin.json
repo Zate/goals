@@ -6,5 +6,9 @@
   "author": {
     "name": "Goals Contributors"
   },
+  "homepage": "https://github.com/Zate/goals#readme",
+  "repository": "https://github.com/Zate/goals",
+  "license": "MIT",
+  "keywords": ["goals", "planning", "workflow", "agents"],
   "skills": "./skills/"
 }

@@ -1,6 +1,6 @@
 # G11 - Finish public metadata and release docs
 
-Status: planned
+Status: complete
 
 Prerequisites: G08, G09, G10
 
@@ -37,3 +37,8 @@ Give adopters a tested first-run path and maintainers a complete release checkli
 ## Verification
 
 - Replay changed local install and use commands in disposable profiles. Check relative links and license parity and run package validation and unit tests. Review hosted syntax against official host docs.
+
+## Completion notes
+
+- Local marketplace add, install, inventory and removal were replayed in disposable unauthenticated profiles against the current package. Claude strict manifest checks passed. User-waived model invocation and authenticated enterprise policy checks remain unverified.
+- Release validation and all 14 unit tests passed. Documentation links and identical MIT license copies were checked. Hosted commands await G14. `Zate/goals` follows the reference repository's owner and this project's name; its existence is unconfirmed.

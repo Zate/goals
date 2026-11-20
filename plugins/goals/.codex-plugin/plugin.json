@@ -2,6 +2,13 @@
   "name": "goals",
   "version": "0.1.0",
   "description": "Plan and execute repository work with a durable goals queue.",
+  "author": {
+    "name": "Goals Contributors"
+  },
+  "homepage": "https://github.com/Zate/goals#readme",
+  "repository": "https://github.com/Zate/goals",
+  "license": "MIT",
+  "keywords": ["goals", "planning", "workflow", "agents"],
   "skills": "./skills/",
   "interface": {
     "displayName": "Goals",
@@ -9,6 +16,7 @@
     "longDescription": "Create, inspect, execute, resume, and archive repository-local goals.",
     "developerName": "Goals Contributors",
     "category": "Development",
+    "websiteURL": "https://github.com/Zate/goals",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Use $goals to turn this plan into a repository-local goal queue.",

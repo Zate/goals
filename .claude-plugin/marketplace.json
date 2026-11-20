@@ -8,10 +8,15 @@
   "plugins": [
     {
       "name": "goals",
+      "displayName": "Goals",
       "version": "0.1.0",
       "description": "Plan and execute repository work with a durable goals queue.",
       "source": "./plugins/goals",
+      "homepage": "https://github.com/Zate/goals#readme",
+      "repository": "https://github.com/Zate/goals",
+      "license": "MIT",
       "category": "Development",
+      "tags": ["goals", "planning", "workflow", "agents"],
       "strict": true
     }
   ]

@@ -66,7 +66,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 - [x] [G08 - Verify the Codex install lifecycle](08-codex-lifecycle.md)
 - [x] [G09 - Verify the Claude Code install lifecycle](09-claude-lifecycle.md)
 - [ ] [G10 - Verify installed skill behavior](10-installed-behavior.md) — retired by user direction
-- [ ] [G11 - Finish public metadata and release docs](11-public-release-docs.md)
+- [x] [G11 - Finish public metadata and release docs](11-public-release-docs.md)
 - [ ] [G12 - Qualify the publish-ready candidate](12-release-readiness.md)
 - [ ] [G13 - Publish the approved candidate](13-authorized-publication.md)
 - [ ] [G14 - Verify the hosted release](14-hosted-verification.md)
