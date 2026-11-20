@@ -33,7 +33,7 @@ Each linked file identifies status, objective, source, prerequisites, scope, non
 | Package and fixtures | G03, G04, G05 | After G02, three independent workers can own platform manifests and presentation metadata, installer and its tests, and behavioral fixtures respectively. Integrate in queue order. |
 | Release tooling | G06 → G07 | Validator consumes both package and installer outputs. CI consumes tested command interfaces. Fixture work can continue independently of these gates. |
 | Host lifecycle | G08, G09 | After G07, run Codex and Claude Code checks in parallel against one candidate with separate temporary profiles and copies. Workers submit separate evidence. |
-| Behavior | G10 | After G05 and both lifecycle goals, parallelize independent host cases. Run the cross-host resume case in series in one disposable consumer repository. |
+| Behavior | G10 | Retired by user direction after both hosts' managed marketplace policies prevented authenticated local trials. Behavioral and cross-host evidence remains unverified. |
 | Readiness | G11 → G12 | Serial. Reconcile docs and confirmed public metadata, then check the resulting candidate and assemble evidence. |
 | Publication | G13 → G14 | Maintainer authorization is required before G13. After publication, hosted CI and the two remote installation checks can run concurrently against the same revision. |
 
@@ -65,7 +65,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 - [x] [G07 - Gate releases in cross-platform CI](07-cross-platform-ci.md)
 - [x] [G08 - Verify the Codex install lifecycle](08-codex-lifecycle.md)
 - [x] [G09 - Verify the Claude Code install lifecycle](09-claude-lifecycle.md)
-- [ ] [G10 - Verify installed skill behavior](10-installed-behavior.md)
+- [ ] [G10 - Verify installed skill behavior](10-installed-behavior.md) — retired by user direction
 - [ ] [G11 - Finish public metadata and release docs](11-public-release-docs.md)
 - [ ] [G12 - Qualify the publish-ready candidate](12-release-readiness.md)
 - [ ] [G13 - Publish the approved candidate](13-authorized-publication.md)

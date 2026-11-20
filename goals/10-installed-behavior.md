@@ -1,6 +1,6 @@
 # G10 - Verify installed skill behavior
 
-Status: planned
+Status: retired
 
 Prerequisites: G05, G08, G09
 
@@ -38,3 +38,8 @@ Prove the installed skill can manage the same queue in both hosts.
 ## Verification
 
 - Follow the G05 case protocol, independently check filesystem and Git observations, and record verdicts and discrepancies in `docs/validation.md`. Verify any fixes with targeted reruns before accepting the revised package.
+
+## Retirement notes
+
+- The user directed that both Codex and Claude model evaluations be skipped after their authenticated local marketplace attempts were denied by enterprise policy. None of the model behavior cases or cross-host recovery were run.
+- G11 and G12 may proceed with this explicit waiver recorded as a release limitation. Reopen this goal if an approved test route becomes available.
