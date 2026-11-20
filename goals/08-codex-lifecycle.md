@@ -1,6 +1,6 @@
 # G08 - Verify the Codex install lifecycle
 
-Status: planned
+Status: complete
 
 Prerequisites: G07
 
@@ -37,3 +37,8 @@ Show that Codex can install, discover, update and remove the local Goals marketp
 ## Verification
 
 - Run and record the host's local add, install, list, fresh invocation, refresh, uninstall and reinstall commands. Verify package version, payload hashes and normal-profile signatures, then clean up.
+
+## Completion notes
+
+- Isolated installation, inventory, payload comparison, refresh, removal and reinstall passed for version 0.1.0. Normal profile signatures matched. See `docs/validation.md`.
+- Authenticated invocation was denied by enterprise-managed requirements for both the checkout and a disposable copy. The user explicitly directed that this check be skipped. Reference loading in a live Codex session is unverified.

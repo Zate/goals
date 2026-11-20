@@ -57,3 +57,34 @@ installation uses Git and downloads from GitHub and a Python package index.
 The runner's temporary directory holds the installer dry-run target. These checks
 do not require host profiles or model credentials. Hosted run evidence will be
 recorded with the published revision.
+
+## Local marketplace lifecycle, partial
+
+On 2026-11-20, disposable source copies from commit
+`03720deddc274d977818d2296d0ec58e7daccec3` and isolated host profiles were
+used on macOS. Both hosts installed version 0.1.0 and the installed skill tree
+matched the source filenames and SHA-256 hashes. Temporary profiles were removed.
+
+- Codex CLI 0.170.0 added the local marketplace, installed and listed one
+  enabled plugin, removed it, and reinstalled it. A fixture version 0.1.1 was
+  refreshed by re-running `codex plugin add`. Marketplace upgrade rejected the
+  local source. Read-only signatures of the normal Codex configuration and
+  plugin tree matched before and after.
+- Claude Code 2.1.311 passed strict marketplace and plugin manifest validation,
+  added the local marketplace and installed one skill. A fixture version 0.1.1
+  appeared after marketplace and plugin update. Uninstall produced an empty
+  list and reinstall restored 0.1.1. Normal-profile signatures were not checked.
+
+Fresh-session model invocation and reference resolution remain unverified for
+both hosts. These partial results do not complete G08 or G09.
+
+The subsequent authorized fresh-session trials on 2026-11-20 did not reach a
+model response. Codex CLI 0.170.0 rejected both the workspace marketplace and
+a disposable copy under its `enterprise-managed requirements pilot`. Claude
+Code 2.1.311 returned a 401 for an expired OAuth access token. Claude's normal
+configuration, settings and plugin-state signatures matched before and after
+the isolated trial. Both tests removed their temporary profiles and credentials.
+
+The user subsequently directed that the Codex authenticated evaluation be
+skipped. This leaves Codex skill invocation, reference loading and the Codex
+portion of cross-host behavior unverified.
