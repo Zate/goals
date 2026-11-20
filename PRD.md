@@ -4,7 +4,7 @@
 
 ## Starting point and benchmark
 
-The [original skill](goals/SKILL.md) defines an index, goal files, five statuses, execution order, verification and archival. It tells status to repair obvious discrepancies, assumes one commit per goal, and selects the first unchecked item even when a checkbox disagrees with a completed file. Resuming after an interruption can therefore repeat work or change someone’s repository on an inspection request.
+The original skill defined an index, goal files, five statuses, execution order, verification and archival. It told status to repair obvious discrepancies, assumed one commit per goal, and selected the first unchecked item even when a checkbox disagreed with a completed file. The [portable skill](plugins/goals/skills/goals/SKILL.md) refines those behaviors. The original remains available in Git history.
 
 The comparison project, `golang-development`, provides four manifests around one shared payload, progressive skill references, Codex presentation metadata, a generic installer, release checks, cross-platform CI, shared behavioral evals, and dated marketplace smoke records. Its `docs/validation.md` distinguishes published 0.1.0 evidence from later local package and behavior checks. Goals needs equivalent evidence for its own workflows. The number of skills and Go-specific lint tooling are incidental to that benchmark.
 

@@ -1,6 +1,6 @@
 # G02 - Refine the portable skill
 
-Status: planned
+Status: complete
 
 Prerequisites: G01
 
@@ -39,3 +39,8 @@ Ship a single self-contained skill capable of operating fresh and legacy queues.
 ## Verification
 
 - From the packaged directory alone, walk R1–R7 with the shipped templates and G01 fixture. Traverse all bundled references and check examples against the documented state transitions and execution order.
+
+## Completion notes
+
+- Walked R1–R7 against the packaged instructions, templates and G01 fixture, including a status mismatch, failed verification and an archive collision. Verified all packaged Markdown links and template references.
+- `git diff --check` passed. The optional skill-creator quick validator could not run because PyYAML is unavailable. Host behavior remains subject to G10.

@@ -57,7 +57,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 ## Queue
 
 - [x] [G01 - Capture legacy compatibility](01-legacy-compatibility.md)
-- [ ] [G02 - Refine the portable skill](02-portable-skill.md)
+- [x] [G02 - Refine the portable skill](02-portable-skill.md)
 - [ ] [G03 - Package the two marketplaces](03-marketplace-packaging.md)
 - [ ] [G04 - Build the standalone installer](04-standalone-installer.md)
 - [ ] [G05 - Specify behavioral evaluation fixtures](05-behavioral-fixtures.md)
