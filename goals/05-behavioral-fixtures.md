@@ -1,6 +1,6 @@
 # G05 - Specify behavioral evaluation fixtures
 
-Status: planned
+Status: complete
 
 Prerequisites: G02
 
@@ -37,3 +37,7 @@ Provide shared, reproducible behavioral cases that both hosts can run in disposa
 ## Verification
 
 - Check every fixture link, materialize representative fresh and dirty fixtures in disposable repos, and review the case matrix against R1–R8 and the M5 scenario table.
+
+## Completion notes
+
+- Materialized all six scenarios in disposable Git repositories. Checked Markdown links, expected clean or dirty state, and refusal to overwrite an existing destination. Reviewed the nine cases against R1–R8 and the M5 scenarios. Host trials remain in G10.
