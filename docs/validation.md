@@ -47,3 +47,13 @@ claude plugin validate --strict --json plugins/goals
 Inspect the manifest errors and warnings as well as the exit status. The plugin
 directory report can include separate directory submission findings. Local and
 hosted marketplace installation evidence is recorded as it becomes available.
+
+## Continuous integration
+
+The release workflow runs the package validator, unit tests, standalone installer
+dry-run and pinned Agent Skills reference validator on Ubuntu and Windows.
+Checkout and Python setup actions are pinned to commits. The reference validator
+installation uses Git and downloads from GitHub and a Python package index.
+The runner's temporary directory holds the installer dry-run target. These checks
+do not require host profiles or model credentials. Hosted run evidence will be
+recorded with the published revision.

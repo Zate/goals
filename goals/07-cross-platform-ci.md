@@ -1,6 +1,6 @@
 # G07 - Gate releases in cross-platform CI
 
-Status: planned
+Status: complete
 
 Prerequisites: G06
 
@@ -37,3 +37,8 @@ Make the deterministic package checks repeatable on Ubuntu and Windows.
 ## Verification
 
 - Run every workflow command locally where supported. Validate workflow syntax and inspect the matrix, command quoting and permission scopes. Record unrun runner checks.
+
+## Completion notes
+
+- Local release validation, all 14 unit tests, a dry-run target with spaces, and the pinned Agent Skills validation passed. Ruby parsed the workflow and verified the runner matrix and read-only contents permission.
+- `actionlint` was unavailable. Hosted Ubuntu and Windows runs await G14.
