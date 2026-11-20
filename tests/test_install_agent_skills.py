@@ -46,7 +46,7 @@ class InstallerTests(unittest.TestCase):
             [sys.executable, "-B", str(SCRIPT), "--target", str(self.target)],
             text=True, capture_output=True, check=True,
         )
-        self.assertIn(str(self.target / "goals"), run.stdout)
+        self.assertIn(str((self.target / "goals").resolve()), run.stdout)
         self.assertEqual(tree_hashes(INSTALLER.SKILL_SOURCE), tree_hashes(self.target / "goals"))
         source_dirs = {
             path.relative_to(INSTALLER.SKILL_SOURCE)
