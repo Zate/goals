@@ -1,6 +1,6 @@
 # G09 - Verify the Claude Code install lifecycle
 
-Status: planned
+Status: complete
 
 Prerequisites: G07
 
@@ -37,3 +37,8 @@ Show that Claude Code can install, discover, update and remove the local Goals m
 ## Verification
 
 - Run and record strict validation and the host's local add, install, details, fresh invocation, refresh, uninstall and reinstall commands. Verify version, payload and profile signatures, then clean up.
+
+## Completion notes
+
+- Isolated installation, payload comparison, refresh, removal, reinstall and strict validation passed using a temporary home. See `docs/validation.md`.
+- After authentication was refreshed, enterprise policy blocked the local marketplace. The user explicitly directed that Claude model checks be skipped. Authenticated installation, invocation and reference loading remain unverified.

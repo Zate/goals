@@ -88,3 +88,10 @@ the isolated trial. Both tests removed their temporary profiles and credentials.
 The user subsequently directed that the Codex authenticated evaluation be
 skipped. This leaves Codex skill invocation, reference loading and the Codex
 portion of cross-host behavior unverified.
+
+After authentication was refreshed, Claude's authenticated marketplace add
+returned exit 1 because the local directory source was blocked by enterprise
+policy. The earlier successful lifecycle used a temporary home and therefore
+does not establish that the marketplace is permitted under the authenticated
+account's policy. The user directed that Claude model checks also be skipped.
+No model behavior or cross-host recovery has been verified.

@@ -64,7 +64,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 - [x] [G06 - Validate the release package](06-release-validator.md)
 - [x] [G07 - Gate releases in cross-platform CI](07-cross-platform-ci.md)
 - [x] [G08 - Verify the Codex install lifecycle](08-codex-lifecycle.md)
-- [ ] [G09 - Verify the Claude Code install lifecycle](09-claude-lifecycle.md)
+- [x] [G09 - Verify the Claude Code install lifecycle](09-claude-lifecycle.md)
 - [ ] [G10 - Verify installed skill behavior](10-installed-behavior.md)
 - [ ] [G11 - Finish public metadata and release docs](11-public-release-docs.md)
 - [ ] [G12 - Qualify the publish-ready candidate](12-release-readiness.md)
