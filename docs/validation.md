@@ -95,3 +95,44 @@ policy. The earlier successful lifecycle used a temporary home and therefore
 does not establish that the marketplace is permitted under the authenticated
 account's policy. The user directed that Claude model checks also be skipped.
 No model behavior or cross-host recovery has been verified.
+
+## Candidate qualification evidence
+
+On 2026-11-20, a disposable archive of commit
+`99e309c94b09857f66a499c9363c4cbce4a70c94` was checked on macOS. The
+manifest version is `0.1.0`. The archive, installed skill and disposable
+validator environment were removed after the checks.
+
+| Check | Result |
+| --- | --- |
+| `python3 -B scripts/validate_release.py` | Passed |
+| `python3 -B -m unittest discover -s tests -v` | Passed, 14 tests |
+| `python3 -B scripts/install_agent_skills.py --dry-run --target <temporary path with spaces>` | Passed |
+| `python3 -B scripts/install_agent_skills.py --target <temporary path with spaces>` | Passed, seven skill files matched the source paths and SHA-256 hashes |
+| Pinned Agent Skills validator `69ef37e9424c0a7ea9dd2293b559e43ec8176379` against the standalone installed skill | Passed |
+| `claude plugin validate --strict --json <archive root>` | Passed with no marketplace manifest errors or warnings |
+| `claude plugin validate --strict --json <archive root>/plugins/goals` | Passed with no plugin manifest errors or warnings. Its directory report flagged a README missing because the archive had no Git root, and an optional icon |
+
+The skill tree digest was
+`5d6287e14de8678fcaf28f4840d481417a7a582d6e79bb3e4a3d9ce254df9137`.
+The digest is SHA-256 over the concatenation of sorted relative path strings
+and each file's SHA-256 hex digest. The installed tree matched the source
+tree by individual path and hash.
+
+### Requirement evidence and limits
+
+| Requirement | Evidence |
+| --- | --- |
+| R1 | Setup and repeated setup are specified in the skill and G05 A1. The host behavior trial was waived. |
+| R2 | Planning and stable IDs are specified in the skill and G05 A1–A3. The host behavior trials were waived. |
+| R3 | Read-only status is specified in the skill and G05 S1. The host behavior trial was waived. |
+| R4 | Selection, checks and commit authorization are specified in the skill and G05 E1, E2 and X1. The host behavior trials were waived. |
+| R5 | Independent work and blocked dependencies are specified in the skill and G05 E1. The host behavior trial was waived. |
+| R6 | Recovery is specified in the skill and G05 S1 and X1. Cross-host recovery was not tested. |
+| R7 | Archival and retirement are specified in the skill and G05 A4. The host behavior trial was waived. |
+| R8 | Package validation, standalone install and unauthenticated local marketplace lifecycle checks passed. The lifecycle record in `validation.md` covers source `03720de`; the later G11 local recheck used the 99e309c package inputs before its commit. Authenticated marketplace use was denied by each host's enterprise policy. |
+
+The user directed that both model evaluations be skipped after those policy
+denials. The checks above establish package structure and local installation,
+while actual model behavior, reference loading and cross-host recovery remain
+unverified. Hosted CI and remote marketplace installs remain pending.

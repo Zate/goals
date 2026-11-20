@@ -1,6 +1,6 @@
 # G12 - Qualify the publish-ready candidate
 
-Status: planned
+Status: complete
 
 Prerequisites: G06, G07, G08, G09, G10, G11
 
@@ -37,3 +37,8 @@ Produce a reviewable publish-ready candidate and decision record.
 ## Verification
 
 - Run established local gates from a clean candidate checkout, check evidence against R1–R8 and verify package identity against recorded host results. Record the candidate revision and version for the release decision.
+
+## Completion notes
+
+- Candidate package version 0.1.0 at `99e309c94b09857f66a499c9363c4cbce4a70c94` passed deterministic qualification from a disposable archive. The detailed requirement audit, checks and hashes are in `docs/validation.md`.
+- The user waived both authenticated model evaluations. R1–R7 host behavior, cross-host recovery and authenticated marketplace use remain unverified. Hosted CI and remote installation remain pending. This qualification is subject to those explicit limitations.
