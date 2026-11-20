@@ -1,6 +1,6 @@
 # G01 - Capture legacy compatibility
 
-Status: planned
+Status: complete
 
 Prerequisites: None
 
@@ -38,3 +38,8 @@ Keep a reproducible baseline of the existing queue so changes to behavior can be
 ## Verification
 
 - Resolve every fixture queue and archive link. Check filenames, stable IDs, statuses and archive metadata against the original skill. Walk the fixture using the original rules and compare the observations to the note.
+
+## Completion notes
+
+- Copied the fixture to a temporary consumer directory and checked queue and archive links, unique IDs, goal sections, statuses, archive metadata, and the original selection rule with both a checked and an unchecked completed goal. All checks passed.
+- `git diff --check` passed. The baseline is synthetic and does not establish host behavior.
