@@ -58,7 +58,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 
 - [x] [G01 - Capture legacy compatibility](01-legacy-compatibility.md)
 - [x] [G02 - Refine the portable skill](02-portable-skill.md)
-- [ ] [G03 - Package the two marketplaces](03-marketplace-packaging.md)
+- [x] [G03 - Package the two marketplaces](03-marketplace-packaging.md)
 - [ ] [G04 - Build the standalone installer](04-standalone-installer.md)
 - [ ] [G05 - Specify behavioral evaluation fixtures](05-behavioral-fixtures.md)
 - [ ] [G06 - Validate the release package](06-release-validator.md)

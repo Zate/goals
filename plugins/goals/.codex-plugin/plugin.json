@@ -1,0 +1,19 @@
+{
+  "name": "goals",
+  "version": "0.1.0",
+  "description": "Plan and execute repository work with a durable goals queue.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Goals",
+    "shortDescription": "Manage repository goal queues",
+    "longDescription": "Create, inspect, execute, resume, and archive repository-local goals.",
+    "developerName": "Goals Contributors",
+    "category": "Development",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Use $goals to turn this plan into a repository-local goal queue.",
+      "Use $goals to inspect the status of this repository's goals.",
+      "Use $goals to work on the next eligible goal."
+    ]
+  }
+}

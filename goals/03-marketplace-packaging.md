@@ -1,6 +1,6 @@
 # G03 - Package the two marketplaces
 
-Status: planned
+Status: complete
 
 Prerequisites: G02
 
@@ -37,3 +37,8 @@ Make one Goals payload discoverable by both local marketplaces.
 ## Verification
 
 - Parse every JSON manifest and resolve package and skill paths. Run Claude's strict manifest checks against both roots using the verified CLI syntax when available. Record any unavailable host check for G09.
+
+## Completion notes
+
+- Both Claude strict manifest validations passed with no manifest warnings or errors. JSON identity, version, source paths and single-skill inventory checks passed. The directory report flags README and license work covered by G11, plus an optional directory icon.
+- `Goals Contributors` is a provisional project attribution pending G11 review. Local host installation is covered by G08 and G09.

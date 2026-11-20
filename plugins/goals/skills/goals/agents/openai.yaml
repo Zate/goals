@@ -1,0 +1,4 @@
+interface:
+  display_name: "Goals"
+  short_description: "Manage repository goal queues"
+  default_prompt: "Use $goals to inspect or work through the repository's goals as requested."

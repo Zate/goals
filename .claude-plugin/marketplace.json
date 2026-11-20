@@ -1,0 +1,18 @@
+{
+  "name": "goals-marketplace",
+  "owner": {
+    "name": "Goals Contributors"
+  },
+  "description": "Marketplace for the Goals skill.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "goals",
+      "version": "0.1.0",
+      "description": "Plan and execute repository work with a durable goals queue.",
+      "source": "./plugins/goals",
+      "category": "Development",
+      "strict": true
+    }
+  ]
+}

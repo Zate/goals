@@ -1,0 +1,20 @@
+{
+  "name": "goals-marketplace",
+  "interface": {
+    "displayName": "Goals"
+  },
+  "plugins": [
+    {
+      "name": "goals",
+      "source": {
+        "source": "local",
+        "path": "./plugins/goals"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    }
+  ]
+}

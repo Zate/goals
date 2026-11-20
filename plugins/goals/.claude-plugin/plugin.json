@@ -1,0 +1,10 @@
+{
+  "name": "goals",
+  "displayName": "Goals",
+  "version": "0.1.0",
+  "description": "Plan and execute repository work with a durable goals queue.",
+  "author": {
+    "name": "Goals Contributors"
+  },
+  "skills": "./skills/"
+}
