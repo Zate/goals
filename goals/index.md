@@ -61,7 +61,7 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 - [x] [G03 - Package the two marketplaces](03-marketplace-packaging.md)
 - [x] [G04 - Build the standalone installer](04-standalone-installer.md)
 - [x] [G05 - Specify behavioral evaluation fixtures](05-behavioral-fixtures.md)
-- [ ] [G06 - Validate the release package](06-release-validator.md)
+- [x] [G06 - Validate the release package](06-release-validator.md)
 - [ ] [G07 - Gate releases in cross-platform CI](07-cross-platform-ci.md)
 - [ ] [G08 - Verify the Codex install lifecycle](08-codex-lifecycle.md)
 - [ ] [G09 - Verify the Claude Code install lifecycle](09-claude-lifecycle.md)

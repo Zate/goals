@@ -1,6 +1,6 @@
 # G06 - Validate the release package
 
-Status: planned
+Status: complete
 
 Prerequisites: G03, G04
 
@@ -37,3 +37,8 @@ Provide a repeatable local gate that detects broken manifests, skill resources a
 ## Verification
 
 - Run `python3 -B scripts/validate_release.py`, `python3 -B -m unittest discover -s tests -v`, the documented pinned Agent Skills command and strict Claude validation when available. Confirm negative fixtures fail as expected.
+
+## Completion notes
+
+- Release validation and all 14 unit tests passed, including seeded invalid versions, paths, missing resources and template links. The pinned Agent Skills validator passed on a disposable standalone installation.
+- Both Claude strict manifest checks passed with no manifest warnings or errors. The separate directory report identifies missing README and license and an optional icon. G11 covers the README and license.
