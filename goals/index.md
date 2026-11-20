@@ -68,5 +68,5 @@ Preserve work and record the exact blocking condition and checks attempted. If a
 - [ ] [G10 - Verify installed skill behavior](10-installed-behavior.md) — retired by user direction
 - [x] [G11 - Finish public metadata and release docs](11-public-release-docs.md)
 - [x] [G12 - Qualify the publish-ready candidate](12-release-readiness.md)
-- [ ] [G13 - Publish the approved candidate](13-authorized-publication.md)
+- [x] [G13 - Publish the approved candidate](13-authorized-publication.md)
 - [ ] [G14 - Verify the hosted release](14-hosted-verification.md)
