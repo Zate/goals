@@ -1,6 +1,6 @@
 # G04 - Build the standalone installer
 
-Status: planned
+Status: complete
 
 Prerequisites: G02
 
@@ -37,3 +37,7 @@ Install the complete shared skill tree safely into an explicit standalone target
 ## Verification
 
 - Run `python3 -B -m unittest discover -s tests -p 'test_install_agent_skills.py' -v`. Exercise dry-run, a successful disposable install, a destination containing spaces and an existing destination. Compare filenames and hashes.
+
+## Completion notes
+
+- Five focused unit tests passed, covering dry-run without writes, a full tree and SHA-256 comparison in a path with spaces, collision preservation, explicit target and cleanup after a copy failure.
