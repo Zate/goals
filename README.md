@@ -14,6 +14,15 @@ queue in your repo so your agent can work through it across sessions.
 
 ## Example
 
+We used Goals to build this plugin. The [PRD](PRD.md) defines what it needed
+to do, the [plan](PLAN.md) breaks the work into milestones, and the
+[goal queue](goals/index.md) links to the individual files in `goals/`.
+For a completed example, see the
+[standalone installer goal](goals/04-standalone-installer.md) for its scope,
+prerequisites, acceptance criteria, and verification results.
+
+### A smaller example
+
 Ask your agent to turn `PLAN.md` into goals. A plan for CSV export might
 produce these files.
 
