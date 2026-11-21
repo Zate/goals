@@ -1,18 +1,38 @@
 # Goals
 
-Goals helps a coding agent turn a plan into a repository-local queue of
-verifiable outcomes, report progress, execute or resume work, and archive or
-retire goals. The queue uses Markdown files under `goals/`, so a person or
-another agent can inspect the work and its verification.
+![A mountain goat beside a trail map with a marked route to the summit.](assets/header.webp)
 
-The shared skill is available through Codex and Claude Code marketplaces or as
-a standalone Agent Skill. It supports existing queues without dependency fields
-and new goals with optional prerequisite IDs.
+Goals is a skill for Codex and Claude Code. It turns a plan into a Markdown
+queue in your repo so your agent can work through it across sessions.
 
-## Install from a local checkout
+[![Codex marketplace](https://img.shields.io/badge/Codex-marketplace-185647?style=flat-square)](#codex)
+[![Claude Code marketplace](https://img.shields.io/badge/Claude%20Code-marketplace-964A2C?style=flat-square)](#claude-code)
+[![Standalone Agent Skill](https://img.shields.io/badge/Agent%20Skill-standalone-2E6C59?style=flat-square)](#standalone-skill)
+[![MIT license](https://img.shields.io/badge/license-MIT-A46514?style=flat-square)](LICENSE)
 
-Use the absolute path to this repository as `<checkout>`. Start a new agent
-session after installation so the host loads the skill.
+[Install](#install) · [First session](#first-session) · [Refresh or uninstall](#refresh-and-uninstall)
+
+## Example
+
+Ask your agent to turn `PLAN.md` into goals. A plan for CSV export might
+produce these files.
+
+```text
+goals/
+├── index.md
+├── 01-add-csv-export.md      G01 · Export filtered results as CSV
+└── 02-add-export-button.md   G02 · Add a download button (requires G01)
+```
+
+The index tracks the queue and its progress. Each goal file describes the
+work, how to check it, and the results once those checks run. In this example,
+the agent verifies the export before starting on the button. Prerequisites
+are optional, so existing queues still work.
+
+## Install
+
+Use the absolute path to your Goals checkout in place of `<checkout>`. Start
+a new agent session after installing.
 
 ### Codex
 
@@ -30,87 +50,59 @@ claude plugin install goals@goals-marketplace
 claude plugin details goals@goals-marketplace
 ```
 
-## Install from GitHub
+### Install from GitHub
 
-The intended GitHub marketplace is `Zate/goals`. These commands apply after
-the repository is published and the hosted installation checks have passed.
+Use the same commands above with `Zate/goals` in place of `"<checkout>"`.
+Hosted installation checks are tracked in the
+[release goal](goals/14-hosted-verification.md). Each host's managed policy
+can affect marketplace access.
 
-### Codex
+### Standalone skill
 
-```sh
-codex plugin marketplace add Zate/goals
-codex plugin add goals@goals-marketplace
-codex plugin list --marketplace goals-marketplace
-```
-
-### Claude Code
-
-```sh
-claude plugin marketplace add Zate/goals
-claude plugin install goals@goals-marketplace
-claude plugin details goals@goals-marketplace
-```
-
-Hosted installation still awaits release verification. See the
-[validation guide](docs/validation.md) for the checks and evidence.
-Authenticated local marketplace use is subject to each host's managed policy.
-Model-based behavior checks have been waived and remain unverified.
-
-## Install the standalone skill
-
-Choose a skill directory supported by your agent. The installer creates a
-`goals` directory at the specified target and copies its references, examples,
-and metadata.
+Choose a skill directory supported by your agent. The installer copies the
+complete skill into a `goals` subdirectory.
 
 ```sh
 python3 scripts/install_agent_skills.py --dry-run --target "<skills-directory>"
 python3 scripts/install_agent_skills.py --target "<skills-directory>"
 ```
 
-The installer reports a collision if `<skills-directory>/goals` already
-exists. Review the existing installation before replacing or removing it. For
-Windows, use the available Python command and a Windows path for the target.
-
-If you previously copied the old single `goals/SKILL.md`, migrate by installing
-the complete new skill directory, including `references/` and `assets/`.
-Existing repository queues can continue to use their documented format.
+If the target already contains a `goals` directory, the installer reports a
+collision. On Windows, use your Python command and a Windows path. If you
+previously copied just `goals/SKILL.md`, install the complete skill to get the
+bundled references and templates.
 
 ## First session
 
-Open a repository in a fresh Codex or Claude Code session and invoke the
-installed skill explicitly.
+Open the repository you want to work on in a fresh session. To start from a
+plan, pass its path to the skill.
 
 ```text
-$goals Set up a goals queue for this repository.
-/goals:goals Set up a goals queue for this repository.
+$goals Turn PLAN.md into executable goals.
+/goals:goals Turn PLAN.md into executable goals.
 ```
 
-Use the first line in Codex and the second in Claude Code. You can also ask in
-natural language. To create goals from a plan, provide its path, for example
-`Turn PLAN.md into executable goals.` Review the generated `goals/index.md`
-and goal files before requesting execution.
+Use the first line in Codex and the second in Claude Code. If there is no
+plan yet, ask the skill to set up an empty queue.
 
-These requests select common modes:
+Review `goals/index.md` and the linked goal files before asking the agent to
+start. You can also ask it to check progress or pick up interrupted work.
 
-```text
-What is the status of the goals?
-Work on the next eligible goal.
-Work through all eligible goals.
-Resume the in-progress goal.
-Archive completed goals.
-```
+- “Show me the status of the goals.” This leaves the queue untouched.
+- “Work on the next eligible goal” or “Work through all eligible goals.”
+- “Resume the in-progress goal.”
+- “Archive completed goals.”
 
-Status inspection reports inconsistencies without modifying the queue.
-Execution records verification and respects the repository's instructions.
-Request a commit explicitly when one is wanted.
+Ask explicitly if you want the agent to commit its work.
 
 ## Refresh and uninstall
 
+### Refresh
+
 For a local Codex marketplace, re-add the plugin after changing the checkout.
+
 ```sh
 codex plugin add goals@goals-marketplace
-codex plugin remove goals@goals-marketplace
-codex plugin marketplace remove goals-marketplace
 ```
 
 For a hosted Codex marketplace, refresh the marketplace before re-adding the
@@ -121,35 +113,42 @@ codex plugin marketplace upgrade goals-marketplace
 codex plugin add goals@goals-marketplace
 ```
 
-For Claude Code, update the marketplace and plugin, or uninstall them.
+For Claude Code, update the marketplace and plugin.
 
 ```sh
 claude plugin marketplace update goals-marketplace
 claude plugin update goals@goals-marketplace
+```
+
+Start a new session after refreshing. In Claude Code, you can also use
+`/reload-plugins` in the current session.
+
+### Uninstall
+
+```sh
+codex plugin remove goals@goals-marketplace
+codex plugin marketplace remove goals-marketplace
+```
+
+```sh
 claude plugin uninstall goals@goals-marketplace
 claude plugin marketplace remove goals-marketplace
 ```
 
-Start a new session after changing an installation. In a running Claude Code
-session, `/reload-plugins` reloads installed plugins.
-
 ## Troubleshooting
 
-- If the skill does not appear, inspect the host's plugin list or details and
-  start a new session. Confirm the marketplace points to the intended checkout.
-- If standalone installation reports an existing destination, inspect that
-  directory and choose an empty target or remove the old installation after
-  review.
-- If a queue has missing links, inconsistent statuses, or blocked
-  prerequisites, ask for goal status first. The report identifies the
-  affected work without changing files.
-- If validation fails, run the checks in the [validation guide](docs/validation.md)
-  and inspect the reported path or field.
+- If the skill does not appear, check the host's plugin list and marketplace
+  path, then start a new session.
+- If the standalone installer reports a collision, review the existing copy
+  or choose a different destination.
+- If the queue has broken links, inconsistent statuses, or blocked goals,
+  ask for goal status to see which files need attention.
+- If validation fails, see the [validation guide](docs/validation.md) for the
+  checks and their expected inputs.
 
 ## Release and security
 
-The [release checklist](docs/release-checklist.md) describes the evidence and
-approval needed for a release. Goals is licensed under MIT. Report security
-issues privately through a GitHub security advisory for the repository when
-available. Keep secrets, private repository contents and customer data out of
-public issues.
+See the [release checklist](docs/release-checklist.md) for release
+requirements and the [validation guide](docs/validation.md) for test
+results. Report security issues privately as described in the
+[security policy](SECURITY.md). Goals is licensed under [MIT](LICENSE).

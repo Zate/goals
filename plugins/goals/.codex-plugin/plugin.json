@@ -17,6 +17,8 @@
     "developerName": "Goals Contributors",
     "category": "Development",
     "websiteURL": "https://github.com/Zate/goals",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Use $goals to turn this plan into a repository-local goal queue.",

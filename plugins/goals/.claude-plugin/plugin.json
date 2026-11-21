@@ -10,5 +10,6 @@
   "repository": "https://github.com/Zate/goals",
   "license": "MIT",
   "keywords": ["goals", "planning", "workflow", "agents"],
+  "icon": "./assets/icon.png",
   "skills": "./skills/"
 }
