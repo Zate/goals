@@ -41,4 +41,4 @@ Show that Codex can install, discover, update and remove the local Goals marketp
 ## Completion notes
 
 - Isolated installation, inventory, payload comparison, refresh, removal and reinstall passed for version 0.1.0. Normal profile signatures matched. See `docs/validation.md`.
-- Authenticated invocation was denied by enterprise-managed requirements for both the checkout and a disposable copy. The user explicitly directed that this check be skipped. Reference loading in a live Codex session is unverified.
+- Codex rejected both local marketplace sources before model invocation. Further model checks were waived. Live invocation and reference loading remain unverified.

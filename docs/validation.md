@@ -75,26 +75,15 @@ matched the source filenames and SHA-256 hashes. Temporary profiles were removed
   appeared after marketplace and plugin update. Uninstall produced an empty
   list and reinstall restored 0.1.1. Normal-profile signatures were not checked.
 
-Fresh-session model invocation and reference resolution remain unverified for
-both hosts. These partial results do not complete G08 or G09.
+Fresh-session trials on 2026-11-20 stopped before either host returned a model
+response. Codex rejected both the checkout marketplace and a disposable copy.
+Claude's first attempt returned HTTP 401. On retry, the local marketplace add
+exited with status 1. Claude's normal configuration, settings and plugin-state
+signatures matched before and after the isolated trial. Temporary profiles and
+credentials were removed.
 
-The subsequent authorized fresh-session trials on 2026-11-20 did not reach a
-model response. Codex CLI 0.170.0 rejected both the workspace marketplace and
-a disposable copy under its `enterprise-managed requirements pilot`. Claude
-Code 2.1.311 returned a 401 for an expired OAuth access token. Claude's normal
-configuration, settings and plugin-state signatures matched before and after
-the isolated trial. Both tests removed their temporary profiles and credentials.
-
-The user subsequently directed that the Codex authenticated evaluation be
-skipped. This leaves Codex skill invocation, reference loading and the Codex
-portion of cross-host behavior unverified.
-
-After authentication was refreshed, Claude's authenticated marketplace add
-returned exit 1 because the local directory source was blocked by enterprise
-policy. The earlier successful lifecycle used a temporary home and therefore
-does not establish that the marketplace is permitted under the authenticated
-account's policy. The user directed that Claude model checks also be skipped.
-No model behavior or cross-host recovery has been verified.
+Further model checks were waived for both hosts. Live skill invocation,
+reference loading and cross-host recovery remain unverified.
 
 ## Candidate qualification evidence
 
@@ -130,9 +119,8 @@ tree by individual path and hash.
 | R5 | Independent work and blocked dependencies are specified in the skill and G05 E1. The host behavior trial was waived. |
 | R6 | Recovery is specified in the skill and G05 S1 and X1. Cross-host recovery was not tested. |
 | R7 | Archival and retirement are specified in the skill and G05 A4. The host behavior trial was waived. |
-| R8 | Package validation, standalone install and unauthenticated local marketplace lifecycle checks passed. The lifecycle record in `validation.md` covers source `03720de`; the later G11 local recheck used the 99e309c package inputs before its commit. Authenticated marketplace use was denied by each host's enterprise policy. |
+| R8 | Package validation, standalone install and unauthenticated local marketplace lifecycle checks passed. The lifecycle record in `validation.md` covers source `03720de`; the later G11 local recheck used the 99e309c package inputs before its commit. Neither fresh-session trial reached model invocation. |
 
-The user directed that both model evaluations be skipped after those policy
-denials. The checks above establish package structure and local installation,
+The checks above establish package structure and local installation,
 while actual model behavior, reference loading and cross-host recovery remain
 unverified. Hosted CI and remote marketplace installs remain pending.

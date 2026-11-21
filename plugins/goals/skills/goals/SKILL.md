@@ -1,14 +1,29 @@
 ---
 name: goals
-description: Manage repository-local goal queues when asked to create goals from a plan, inspect goal status, execute or resume goals, or archive or retire goals.
+description: Use when the Goals skill is explicitly invoked, when asked whether to use a repository-local goal queue, or when asked to initialize, plan, inspect, execute, resume, archive, or retire repository-local goals.
 ---
 
 # Goals
 
 Use a repository's `goals/index.md` and linked Markdown goal files to plan and
-track work. Choose the requested mode. A general request for autonomous work,
-a roadmap, or a plan for later conversion does not itself request a goal queue
-or authorize execution.
+track work. Route by what the user asks for. Invoking the skill by itself does
+not authorize changes.
+
+- **Bare invocation** — Read the available repository guidance and planning
+  context. If a queue exists, use the inspect guidance in
+  [execution](references/execution.md). Summarize the current context and
+  recommend one concrete next step with a brief reason. If the queue is absent,
+  say so and base the recommendation on the available context. Keep this
+  read-only, including Git state.
+- **Workflow question** — Answer the specific question, such as whether the
+  work benefits from a goal queue, using relevant context. Keep the response
+  advisory and read-only.
+- **Specific task** — Carry out the requested task directly. Use the matching
+  mode below for a queue operation. A general request for autonomous work, a
+  roadmap, or a plan for later conversion does not itself request a goal queue
+  or authorize goal execution.
+
+## Queue operations
 
 - **Initialize or plan** — Read [planning](references/planning.md) to set up a
   queue or turn a source into goals.

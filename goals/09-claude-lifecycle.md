@@ -41,4 +41,4 @@ Show that Claude Code can install, discover, update and remove the local Goals m
 ## Completion notes
 
 - Isolated installation, payload comparison, refresh, removal, reinstall and strict validation passed using a temporary home. See `docs/validation.md`.
-- After authentication was refreshed, enterprise policy blocked the local marketplace. The user explicitly directed that Claude model checks be skipped. Authenticated installation, invocation and reference loading remain unverified.
+- The fresh-session retry stopped at marketplace add (exit 1). Further model checks were waived. Installation in that trial, live invocation and reference loading remain unverified.
